@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        .mr-5 {
+            margin-right: 5px;
+        }
+        
+        .mw-15 {
+            min-width: 15%;
+        }
+        
+        .mw-40 {
+            min-width: 40%;
+            max-width: 40%;
+        }
+        
+        .pointer {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="jumbotron bg-info text-center lh-base">Type your name and birth year</h2>
+    <div class="mb-3 form-control w-25 m-auto mt-5" id="form">
+        <h1 class="text-center">Form</h1>
+        <div class="d-flex flex-row mb-3 align-items-center flex-grow-1">
+            <label for="" class="form-label mr-5 mw-15">Name: </label>
+            <input type="text" id="inputname" class="input-group-text w-100">
+        </div>
+        <div class="d-flex flex-row mb-3 align-items-center flex-grow-1">
+            <label for="" class="form-label mr-5 mw-15">Birth: </label>
+            <input type=" text " id="inputbirthyear" class="input-group-text w-100">
+        </div>
+        <div class="w-100 text-center d-flex justify-content-between">
+            <button class="btn btn-success fw-bold mw-40 h" id="submit" onclick="Submit()"> Submit </button>
+            <div class="dropdown mw-40">
+                <button class="btn btn-success w-100" id="DropdownBG" onclick="Click()">
+                  <span>BG White</span>
+                  <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </button>
+                <div class="dropdown-menu pointer">
+                    <span class="dropdown-item" href="#" onclick="Change(this,'white')">BG White</span>
+                    <span class="dropdown-item" href="#" onclick="Change(this,'red')">BG Red</span>
+                    <span class="dropdown-item" href="#" onclick="Change(this,'blue')">BG Blue</span>
+                    <span class="dropdown-item" href="#" onclick="Change(this,'yellow')">BG Yellow</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="name">Hello:</h1>
+    <h1 id="birthyear">Birthyear: </h1>
+    <h1 id="age">Age: </h1>
+
+    <script src="./bai1.js"></script>
+    <script src="./bai2.js"></script>
+</body>
+
+</html>

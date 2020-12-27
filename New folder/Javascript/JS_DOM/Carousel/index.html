@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        .carousel {
+            width: 800px;
+            height: 550px;
+            position: relative;
+            margin: auto;
+            box-sizing: border-box;
+        }
+        
+        .img1 {
+            background-image: url(./img1.png);
+        }
+        
+        .img2 {
+            background-image: url(./img2.jpg);
+        }
+        
+        .img3 {
+            background-image: url(./img3.jpg)
+        }
+        
+        .img4 {
+            background-image: url(./img4.jpg)
+        }
+        
+        .img5 {
+            background-image: url(./img5.jpg)
+        }
+        
+        .list-img {
+            width: 100%;
+            height: 100%;
+            transition: all 500ms ease 0s;
+        }
+        
+        .img {
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
+            display: none;
+            background-repeat: no-repeat;
+            animation: fade 2s ease 0s 1 forwards;
+            transition: all 2s ease;
+        }
+        
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .list-img .active {
+            display: block;
+            transition: all .6s ease-in-out;
+        }
+        
+        .list-indicator {
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 1rem;
+            padding-left: 0;
+        }
+        
+        .indicator {
+            width: 30px;
+            height: 4px;
+            margin-right: 3px;
+            margin-left: 3px;
+            background: #000;
+            transition: opacity .06s ease;
+            background-color: black;
+            background-clip: padding-box;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            cursor: pointer;
+            opacity: 0.5;
+        }
+        
+        .list-indicator .active {
+            opacity: 1;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .btn {
+            outline: none;
+            border: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            width: 2.1875rem;
+            height: 3.75rem;
+            background-color: rgba(0, 0, 0, .25);
+            box-shadow: 0 1px 8px 0 rgba(0, 0, 0, .09);
+        }
+        
+        .btn:hover {
+            background-color: rgba(0, 0, 0, .68);
+        }
+        
+        .btn-prev {
+            left: 0;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+        
+        .btn-next {
+            right: 0;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+        }
+        
+        .icon {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Carousel</h1>
+    <div class="carousel">
+        <div class="list-img">
+            <div class="img img1 active"></div>
+            <div class="img img2"></div>
+            <div class="img img3"></div>
+            <div class="img img4"></div>
+            <div class="img img5"></div>
+        </div>
+        <div class="list-indicator">
+            <div class="indicator active"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+        </div>
+        <button class="btn btn-prev">
+            <i class="fa fa-chevron-left icon" aria-hidden="true"></i>
+        </button>
+        <button class="btn btn-next">
+            <i class="fa fa-chevron-right icon" aria-hidden="true"></i>
+        </button>
+    </div>
+    <script src="./carousel.js"></script>
+</body>
+
+</html>
