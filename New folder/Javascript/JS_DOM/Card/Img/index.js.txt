@@ -1,0 +1,73 @@
+// bai 23
+var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+var maxCount = 0;
+for (var i = 0; i < a.length; i++) {
+    var currentCount = 0;
+    for (var j = 0; j < a.length; j++) {
+        if (a[i] === a[j]) {
+            currentCount++;
+        }
+    }
+    if (currentCount > maxCount) {
+        maxCount = currentCount;
+    }
+}
+console.log("Tan so xuat hien nhieu nhat: ", maxCount);
+
+// bai 26
+var a = [1, 2, 3, 4, 6, 7];
+var k = 5;
+var space = Infinity;
+for (var i = 0; i < a.length; i++) {
+    if (Math.abs(k - a[i]) < space) {
+        space = Math.abs(k - a[i]);
+    }
+}
+var nearK = a.filter((number) => Math.abs(number - k) === space);
+console.log("Gan voi", k, "nhat: ", nearK);
+
+// bai 28
+var students = [
+    {
+        id: "T3HXX1",
+        firstName: "NgAN",
+        lastName: "Duong Thuy",
+    },
+    {
+        id: "T3HXX2",
+        firstName: "Ha",
+        lastName: "Do Thi Thu",
+    },
+    {
+        id: "T3HXX5",
+        firstName: "Minh",
+        lastName: "Nguyen Nhat",
+    },
+];
+
+const filterStudents = students.filter(
+    (student) => student.lastName.split(" ")[0].toLowerCase() == "do"
+);
+console.log("Hoc sinh ca biet: ", filterStudents);
+
+// bai 31
+var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+var k = 30;
+var check = false;
+for (var i = 0; i < a.length; i++) {
+    for (var j = i + 1; j < a.length; j++) {
+        for (var u = j + 1; u < a.length; u++) {
+            if (a[i] + a[j] + a[u] === k) {
+                check = true;
+                break;
+            }
+        }
+        if (check) {
+            break;
+        }
+    }
+    if (check) {
+        break;
+    }
+}
+console.log("Result: ", check ? "YES" : "NO");
